@@ -68,27 +68,24 @@ void Sort::selectionSort()
     int swaps = 0;
     int length = collection_to_sort.size();
     // for each element in the array
-
-        // for each j in array 
-            // 
-    /*
-    for(int i = 0; i < length; i++){
-        for(int j=0; j<length; j++){
-            iterations++;
-            int current_element = collection_to_sort[j];
-            int next_element = collection_to_sort[j+1];
-            if(current_element > next_element){
-                swaps++;
-                collection_to_sort[j] = next_element;
-                collection_to_sort[j+1] = current_element;
+    for(int i=0; i<length; i++){
+        int smallest_number_index = i;
+        int smallest_number = collection_to_sort[i];
+        for(int j=i; j<length; j++){
+            int current_node = collection_to_sort[j];
+            if(collection_to_sort[j] < collection_to_sort[smallest_number_index]){
+                smallest_number_index = j;
+                smallest_number = collection_to_sort[j];
             }
         }
+        collection_to_sort[smallest_number_index] = collection_to_sort[i];
+        collection_to_sort[i] = smallest_number;
     }
-    cout << "Completed bubble sort. Number of iterations: " << iterations << ". Number of element swaps: " << swaps << endl;
+    cout << "Completed selection sort. Number of iterations: " << iterations << ". Number of element swaps: " << swaps << endl;
     cout << "Sorted Array..." << endl;
-    printListToSort();*/
-
+    printListToSort();
 }
+
 
 int main()
 {
